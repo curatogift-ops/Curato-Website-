@@ -40,10 +40,8 @@ const testimonials = [
 
 export default function TestimonialsSection() {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
-    setIsClient(true);
     const interval = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % testimonials.length);
     }, 5000);

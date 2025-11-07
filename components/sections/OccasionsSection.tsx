@@ -24,6 +24,7 @@ export default function OccasionsSection() {
               className="relative h-[400px] overflow-hidden cursor-pointer group"
             >
               <div className="relative w-full h-full overflow-hidden">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src={occasion.image}
                   alt={`${occasion.name} Hampers`}

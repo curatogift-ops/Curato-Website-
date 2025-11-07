@@ -27,6 +27,7 @@ export default function GiftsSection() {
               className="relative rounded-lg overflow-hidden cursor-pointer transition-all duration-300 hover:-translate-y-1 hover:shadow-xl bg-white shadow-md group"
             >
               <div className="relative w-full h-[350px] overflow-hidden">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src={category.image}
                   alt={category.name}

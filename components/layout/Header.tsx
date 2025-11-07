@@ -18,30 +18,39 @@ export default function Header() {
       <div className="max-w-[1400px] mx-auto px-5 py-2">
         <div className="flex justify-between items-center">
           {/* Logo */}
-          <Link href="/" className="text-[#d4af37] text-xl md:text-2xl font-semibold tracking-wider">
-            Curato Gifting
+          <Link href="/" className="flex items-center gap-2">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img 
+              src="/images/Gemini_Generated_Image_dwx4vndwx4vndwx4-removebg-preview (1).png" 
+              alt="Curato Gift Logo" 
+              className="h-24 md:h-28 w-auto"
+            />
           </Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex gap-6 items-center">
-            <Link href="/" className="text-[#f4e4bc] text-sm font-medium hover:text-[#d4af37] transition-colors relative group">
+            <Link href="/" className="text-[#f4e4bc] text-base font-medium hover:text-[#d4af37] transition-colors relative group">
               Home
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#d4af37] transition-all group-hover:w-full"></span>
             </Link>
-            <Link href="/#occasions" className="text-[#f4e4bc] text-sm font-medium hover:text-[#d4af37] transition-colors relative group">
+            <Link href="/#occasions" className="text-[#f4e4bc] text-base font-medium hover:text-[#d4af37] transition-colors relative group">
               Occasions
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#d4af37] transition-all group-hover:w-full"></span>
             </Link>
-            <Link href="/custom" className="text-[#f4e4bc] text-sm font-medium hover:text-[#d4af37] transition-colors relative group">
-              Custom
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#d4af37] transition-all group-hover:w-full"></span>
-            </Link>
-            <Link href="/about" className="text-[#f4e4bc] text-sm font-medium hover:text-[#d4af37] transition-colors relative group">
+            <Link href="/about" className="text-[#f4e4bc] text-base font-medium hover:text-[#d4af37] transition-colors relative group">
               About
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#d4af37] transition-all group-hover:w-full"></span>
             </Link>
-            <Link href="/contact" className="text-[#f4e4bc] text-sm font-medium hover:text-[#d4af37] transition-colors relative group">
+            <Link href="/contact" className="text-[#f4e4bc] text-base font-medium hover:text-[#d4af37] transition-colors relative group">
               Contact
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#d4af37] transition-all group-hover:w-full"></span>
+            </Link>
+            <Link href="/corporate-hampers" className="text-[#f4e4bc] text-base font-medium hover:text-[#d4af37] transition-colors relative group">
+              Corporate Hampers
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#d4af37] transition-all group-hover:w-full"></span>
+            </Link>
+            <Link href="/christmas-hampers" className="text-[#f4e4bc] text-base font-medium hover:text-[#d4af37] transition-colors relative group">
+              Christmas Hampers
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#d4af37] transition-all group-hover:w-full"></span>
             </Link>
           </nav>
@@ -85,14 +94,17 @@ export default function Header() {
             <Link href="/#occasions" className="text-[#f4e4bc] text-base font-medium hover:text-[#d4af37] transition-colors py-2 border-b border-[#d4af37]/20">
               Occasions
             </Link>
-            <Link href="/custom" className="text-[#f4e4bc] text-base font-medium hover:text-[#d4af37] transition-colors py-2 border-b border-[#d4af37]/20">
-              Custom
-            </Link>
             <Link href="/about" className="text-[#f4e4bc] text-base font-medium hover:text-[#d4af37] transition-colors py-2 border-b border-[#d4af37]/20">
               About
             </Link>
-            <Link href="/contact" className="text-[#f4e4bc] text-base font-medium hover:text-[#d4af37] transition-colors py-2">
+            <Link href="/contact" className="text-[#f4e4bc] text-base font-medium hover:text-[#d4af37] transition-colors py-2 border-b border-[#d4af37]/20">
               Contact
+            </Link>
+            <Link href="/corporate-hampers" className="text-[#f4e4bc] text-base font-medium hover:text-[#d4af37] transition-colors py-2 border-b border-[#d4af37]/20">
+              Corporate Hampers
+            </Link>
+            <Link href="/christmas-hampers" className="text-[#f4e4bc] text-base font-medium hover:text-[#d4af37] transition-colors py-2">
+              Christmas Hampers
             </Link>
           </nav>
         )}

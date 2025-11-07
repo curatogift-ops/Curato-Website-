@@ -55,6 +55,7 @@ export default function ChristmasSection() {
               className="cursor-pointer hover:-translate-y-1 transition-transform group"
             >
               <div className="relative w-full h-[250px] rounded-lg overflow-hidden bg-black">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src={hamper.image}
                   alt={hamper.name}
