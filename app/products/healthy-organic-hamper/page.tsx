@@ -1,5 +1,4 @@
 import Image from 'next/image';
-import Link from 'next/link';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -9,7 +8,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Healthy & Organic Hamper - 100% Organic Wellness Gifts',
     description: 'Gift wellness with certified organic products, sugar-free treats, and natural snacks.',
-    images: ['/images/healthy-organic-hamper.jpg'],
+    images: ['/images/healthy-organic-hamper.webp'],
   },
 };
 
@@ -19,7 +18,7 @@ export default function HealthyOrganicHamperPage() {
     "@type": "Product",
     "name": "Healthy & Organic Hamper",
     "description": "Gift wellness with certified organic products, sugar-free treats, superfoods, and natural snacks.",
-    "image": "https://www.curatogift.com/images/healthy-organic-hamper.jpg",
+    "image": "https://www.curatogift.com/images/healthy-organic-hamper.webp",
     "offers": {
       "@type": "Offer",
       "price": "2299",
@@ -41,18 +40,12 @@ export default function HealthyOrganicHamperPage() {
       />
       <div className="min-h-screen bg-white py-20">
       <div className="max-w-[1400px] mx-auto px-5">
-        <nav className="text-sm mb-8">
-          <Link href="/" className="text-[#8B7355] hover:text-[#3B2E2A]">Home</Link>
-          <span className="mx-2 text-[#8B7355]">/</span>
-          <Link href="/products" className="text-[#8B7355] hover:text-[#3B2E2A]">Products</Link>
-          <span className="mx-2 text-[#8B7355]">/</span>
-          <span className="text-[#3B2E2A]">Healthy & Organic Hamper</span>
-        </nav>
+        
 
         <div className="grid md:grid-cols-2 gap-12 mb-16">
           <div className="relative aspect-square bg-[#F5F1ED] rounded-lg overflow-hidden">
             <Image
-              src="/images/healthy-organic-hamper.jpg"
+              src="/images/healthy-organic-hamper.webp"
               alt="Healthy & Organic Hamper"
               fill
               className="object-cover"

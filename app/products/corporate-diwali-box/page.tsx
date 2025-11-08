@@ -1,5 +1,4 @@
 import Image from 'next/image';
-import Link from 'next/link';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -9,7 +8,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Corporate Diwali Box - Customizable Business Gifts',
     description: 'Customizable Corporate Diwali Boxes with your company logo. Perfect for clients, employees, and partners.',
-    images: ['/images/corporate-diwali-box.jpg'],
+    images: ['/images/corporate-diwali-box.webp'],
   },
 };
 
@@ -19,7 +18,7 @@ export default function CorporateDiwaliBoxPage() {
     "@type": "Product",
     "name": "Corporate Diwali Box",
     "description": "Customizable Corporate Diwali Box with company logo branding. Perfect for clients, employees, and partners.",
-    "image": "https://www.curatogift.com/images/corporate-diwali-box.jpg",
+    "image": "https://www.curatogift.com/images/corporate-diwali-box.webp",
     "offers": {
       "@type": "AggregateOffer",
       "lowPrice": "1999",
@@ -42,18 +41,12 @@ export default function CorporateDiwaliBoxPage() {
       />
       <div className="min-h-screen bg-white py-20">
       <div className="max-w-[1400px] mx-auto px-5">
-        <nav className="text-sm mb-8">
-          <Link href="/" className="text-[#8B7355] hover:text-[#3B2E2A]">Home</Link>
-          <span className="mx-2 text-[#8B7355]">/</span>
-          <Link href="/products" className="text-[#8B7355] hover:text-[#3B2E2A]">Products</Link>
-          <span className="mx-2 text-[#8B7355]">/</span>
-          <span className="text-[#3B2E2A]">Corporate Diwali Box</span>
-        </nav>
+        
 
         <div className="grid md:grid-cols-2 gap-12 mb-16">
           <div className="relative aspect-square bg-[#F5F1ED] rounded-lg overflow-hidden">
             <Image
-              src="/images/corporate-diwali-box.jpg"
+              src="/images/corporate-diwali-box.webp"
               alt="Corporate Diwali Box"
               fill
               className="object-cover"

@@ -1,5 +1,4 @@
 import Image from 'next/image';
-import Link from 'next/link';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -9,7 +8,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'New Year Celebration Hamper - Champagne & Gourmet Treats',
     description: 'Ring in the new year with premium sparkling wine, gourmet snacks, and festive treats.',
-    images: ['/images/new-year-celebration-hamper.jpg'],
+    images: ['/images/new-year-celebration-hamper.webp'],
   },
 };
 
@@ -19,7 +18,7 @@ export default function NewYearCelebrationHamperPage() {
     "@type": "Product",
     "name": "New Year Celebration Hamper",
     "description": "Ring in the new year with premium sparkling wine, gourmet cheese, artisan chocolates, and party essentials.",
-    "image": "https://www.curatogift.com/images/new-year-celebration-hamper.jpg",
+    "image": "https://www.curatogift.com/images/new-year-celebration-hamper.webp",
     "offers": {
       "@type": "Offer",
       "price": "3299",
@@ -41,18 +40,12 @@ export default function NewYearCelebrationHamperPage() {
       />
       <div className="min-h-screen bg-white py-20">
       <div className="max-w-[1400px] mx-auto px-5">
-        <nav className="text-sm mb-8">
-          <Link href="/" className="text-[#8B7355] hover:text-[#3B2E2A]">Home</Link>
-          <span className="mx-2 text-[#8B7355]">/</span>
-          <Link href="/products" className="text-[#8B7355] hover:text-[#3B2E2A]">Products</Link>
-          <span className="mx-2 text-[#8B7355]">/</span>
-          <span className="text-[#3B2E2A]">New Year Celebration Hamper</span>
-        </nav>
+        
 
         <div className="grid md:grid-cols-2 gap-12 mb-16">
           <div className="relative aspect-square bg-[#F5F1ED] rounded-lg overflow-hidden">
             <Image
-              src="/images/new-year-celebration-hamper.jpg"
+              src="/images/new-year-celebration-hamper.webp"
               alt="New Year Celebration Hamper"
               fill
               className="object-cover"

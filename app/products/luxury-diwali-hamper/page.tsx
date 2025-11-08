@@ -1,5 +1,4 @@
 import Image from 'next/image';
-import Link from 'next/link';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -9,7 +8,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Luxury Diwali Hamper - Premium Chocolates & Silver Diyas',
     description: 'Experience opulence this Diwali with premium imported chocolates, exotic dry fruits, and silver-plated diyas.',
-    images: ['/images/luxury-diwali-hamper.jpg'],
+    images: ['/images/luxury-diwali-hamper.webp'],
   },
 };
 
@@ -19,7 +18,7 @@ export default function LuxuryDiwaliHamperPage() {
     "@type": "Product",
     "name": "Luxury Diwali Hamper",
     "description": "Experience opulence this Diwali with premium imported chocolates, exotic dry fruits, silver-plated diyas, and gourmet treats.",
-    "image": "https://www.curatogift.com/images/luxury-diwali-hamper.jpg",
+    "image": "https://www.curatogift.com/images/luxury-diwali-hamper.webp",
     "offers": {
       "@type": "Offer",
       "price": "4999",
@@ -41,18 +40,12 @@ export default function LuxuryDiwaliHamperPage() {
       />
       <div className="min-h-screen bg-white py-20">
       <div className="max-w-[1400px] mx-auto px-5">
-        <nav className="text-sm mb-8">
-          <Link href="/" className="text-[#8B7355] hover:text-[#3B2E2A]">Home</Link>
-          <span className="mx-2 text-[#8B7355]">/</span>
-          <Link href="/products" className="text-[#8B7355] hover:text-[#3B2E2A]">Products</Link>
-          <span className="mx-2 text-[#8B7355]">/</span>
-          <span className="text-[#3B2E2A]">Luxury Diwali Hamper</span>
-        </nav>
+        
 
         <div className="grid md:grid-cols-2 gap-12 mb-16">
           <div className="relative aspect-square bg-[#F5F1ED] rounded-lg overflow-hidden">
             <Image
-              src="/images/luxury-diwali-hamper.jpg"
+              src="/images/luxury-diwali-hamper.webp"
               alt="Luxury Diwali Hamper"
               fill
               className="object-cover"

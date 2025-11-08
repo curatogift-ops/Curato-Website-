@@ -1,5 +1,4 @@
 import Image from 'next/image';
-import Link from 'next/link';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -9,7 +8,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Classic Diwali Hamper - Traditional Sweets & Dry Fruits',
     description: 'Celebrate the festival of lights with our Classic Diwali Hamper. Traditional sweets, premium dry fruits, and decorative diyas.',
-    images: ['/images/classic-diwali-hamper.jpg'],
+    images: ['/images/classic-diwali-hamper.webp'],
   },
 };
 
@@ -19,7 +18,7 @@ export default function ClassicDiwaliHamperPage() {
     "@type": "Product",
     "name": "Classic Diwali Hamper",
     "description": "Celebrate the festival of lights with our Classic Diwali Hamper. Traditional sweets, premium dry fruits, decorative diyas, and festive treats.",
-    "image": "https://www.curatogift.com/images/classic-diwali-hamper.jpg",
+    "image": "https://www.curatogift.com/images/classic-diwali-hamper.webp",
     "offers": {
       "@type": "Offer",
       "price": "2499",
@@ -41,18 +40,12 @@ export default function ClassicDiwaliHamperPage() {
       />
       <div className="min-h-screen bg-white py-20">
       <div className="max-w-[1400px] mx-auto px-5">
-        <nav className="text-sm mb-8">
-          <Link href="/" className="text-[#8B7355] hover:text-[#3B2E2A]">Home</Link>
-          <span className="mx-2 text-[#8B7355]">/</span>
-          <Link href="/products" className="text-[#8B7355] hover:text-[#3B2E2A]">Products</Link>
-          <span className="mx-2 text-[#8B7355]">/</span>
-          <span className="text-[#3B2E2A]">Classic Diwali Hamper</span>
-        </nav>
+        
 
         <div className="grid md:grid-cols-2 gap-12 mb-16">
           <div className="relative aspect-square bg-[#F5F1ED] rounded-lg overflow-hidden">
             <Image
-              src="/images/classic-diwali-hamper.jpg"
+              src="/images/classic-diwali-hamper.webp"
               alt="Classic Diwali Hamper"
               fill
               className="object-cover"
