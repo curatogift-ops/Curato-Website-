@@ -17,7 +17,7 @@ export default function Footer() {
   return (
     <footer className="bg-[#3d2817] text-[#f4e4bc] pt-10 pb-4">
       <div className="max-w-[1400px] mx-auto px-5">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 mb-8">
           {/* Company Info */}
           <div className="flex flex-col items-center md:items-start">
             {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -58,6 +58,22 @@ export default function Footer() {
             </ul>
           </div>
 
+          {/* Products */}
+          <div className="text-center md:text-left">
+            <h4 className="text-[#d4af37] mb-4 text-base font-semibold">PRODUCTS</h4>
+            <ul className="space-y-2">
+              <li><Link href="/products/classic-diwali-hamper" className="text-sm hover:text-[#d4af37] transition-colors">Classic Diwali Hamper</Link></li>
+              <li><Link href="/products/luxury-diwali-hamper" className="text-sm hover:text-[#d4af37] transition-colors">Luxury Diwali Hamper</Link></li>
+              <li><Link href="/products/corporate-diwali-box" className="text-sm hover:text-[#d4af37] transition-colors">Corporate Diwali Box</Link></li>
+              <li><Link href="/products/christmas-cheer-hamper" className="text-sm hover:text-[#d4af37] transition-colors">Christmas Cheer Hamper</Link></li>
+              <li><Link href="/products/new-year-celebration-hamper" className="text-sm hover:text-[#d4af37] transition-colors">New Year Hamper</Link></li>
+              <li><Link href="/products/healthy-organic-hamper" className="text-sm hover:text-[#d4af37] transition-colors">Healthy & Organic</Link></li>
+              <li><Link href="/products/tea-coffee-connoisseur-hamper" className="text-sm hover:text-[#d4af37] transition-colors">Tea & Coffee Hamper</Link></li>
+              <li><Link href="/products/custom-corporate-hamper" className="text-sm hover:text-[#d4af37] transition-colors">Custom Corporate</Link></li>
+              <li><Link href="/products/mini-thank-you-hamper" className="text-sm hover:text-[#d4af37] transition-colors">Mini Thank You</Link></li>
+            </ul>
+          </div>
+
           {/* Quick Links */}
           <div className="text-center md:text-left">
             <h4 className="text-[#d4af37] mb-4 text-base font-semibold">QUICK LINKS</h4>
@@ -67,10 +83,9 @@ export default function Footer() {
               <li><Link href="/about" className="text-sm hover:text-[#d4af37] transition-colors">About Us</Link></li>
               <li><Link href="/contact" className="text-sm hover:text-[#d4af37] transition-colors">Contact Us</Link></li>
               <li><Link href="/store-locator" className="text-sm hover:text-[#d4af37] transition-colors">Store Locator</Link></li>
-              <li><Link href="/refund-policy" className="text-sm hover:text-[#d4af37] transition-colors">Refund & Cancellations Policy</Link></li>
+              <li><Link href="/refund-policy" className="text-sm hover:text-[#d4af37] transition-colors">Refund Policy</Link></li>
               <li><Link href="/terms" className="text-sm hover:text-[#d4af37] transition-colors">Terms of Service</Link></li>
               <li><Link href="/privacy" className="text-sm hover:text-[#d4af37] transition-colors">Privacy Policy</Link></li>
-              <li><Link href="/returns" className="text-sm hover:text-[#d4af37] transition-colors">Return Your Order</Link></li>
             </ul>
           </div>
 

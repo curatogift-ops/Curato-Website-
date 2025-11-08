@@ -7,11 +7,13 @@ import {
   UserCircleIcon, 
   ShoppingCartIcon,
   Bars3Icon,
-  XMarkIcon
+  XMarkIcon,
+  ChevronDownIcon
 } from '@heroicons/react/24/outline';
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [productsDropdownOpen, setProductsDropdownOpen] = useState(false);
 
   return (
     <header className="sticky top-0 z-50 bg-[#2a1d11] shadow-lg">
@@ -33,6 +35,55 @@ export default function Header() {
               Home
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#d4af37] transition-all group-hover:w-full"></span>
             </Link>
+            
+            {/* Products Dropdown */}
+            <div 
+              className="relative"
+              onMouseEnter={() => setProductsDropdownOpen(true)}
+              onMouseLeave={() => setProductsDropdownOpen(false)}
+            >
+              <button className="text-[#f4e4bc] text-base font-medium hover:text-[#d4af37] transition-colors relative group flex items-center gap-1">
+                Products
+                <ChevronDownIcon className="w-4 h-4" />
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#d4af37] transition-all group-hover:w-full"></span>
+              </button>
+              
+              {productsDropdownOpen && (
+                <div className="absolute top-full left-0 mt-2 w-64 bg-[#2a1d11] border border-[#d4af37]/30 rounded-lg shadow-xl py-2 z-50">
+                  <Link href="/products/classic-diwali-hamper" className="block px-4 py-2 text-sm text-[#f4e4bc] hover:bg-[#d4af37]/20 hover:text-[#d4af37] transition-colors">
+                    Classic Diwali Hamper
+                  </Link>
+                  <Link href="/products/luxury-diwali-hamper" className="block px-4 py-2 text-sm text-[#f4e4bc] hover:bg-[#d4af37]/20 hover:text-[#d4af37] transition-colors">
+                    Luxury Diwali Hamper
+                  </Link>
+                  <Link href="/products/corporate-diwali-box" className="block px-4 py-2 text-sm text-[#f4e4bc] hover:bg-[#d4af37]/20 hover:text-[#d4af37] transition-colors">
+                    Corporate Diwali Box
+                  </Link>
+                  <Link href="/products/christmas-cheer-hamper" className="block px-4 py-2 text-sm text-[#f4e4bc] hover:bg-[#d4af37]/20 hover:text-[#d4af37] transition-colors">
+                    Christmas Cheer Hamper
+                  </Link>
+                  <Link href="/products/new-year-celebration-hamper" className="block px-4 py-2 text-sm text-[#f4e4bc] hover:bg-[#d4af37]/20 hover:text-[#d4af37] transition-colors">
+                    New Year Celebration
+                  </Link>
+                  <Link href="/products/assorted-sweets-savories-hamper" className="block px-4 py-2 text-sm text-[#f4e4bc] hover:bg-[#d4af37]/20 hover:text-[#d4af37] transition-colors">
+                    Sweets & Savories
+                  </Link>
+                  <Link href="/products/healthy-organic-hamper" className="block px-4 py-2 text-sm text-[#f4e4bc] hover:bg-[#d4af37]/20 hover:text-[#d4af37] transition-colors">
+                    Healthy & Organic
+                  </Link>
+                  <Link href="/products/tea-coffee-connoisseur-hamper" className="block px-4 py-2 text-sm text-[#f4e4bc] hover:bg-[#d4af37]/20 hover:text-[#d4af37] transition-colors">
+                    Tea & Coffee Connoisseur
+                  </Link>
+                  <Link href="/products/custom-corporate-hamper" className="block px-4 py-2 text-sm text-[#f4e4bc] hover:bg-[#d4af37]/20 hover:text-[#d4af37] transition-colors">
+                    Custom Corporate Hamper
+                  </Link>
+                  <Link href="/products/mini-thank-you-hamper" className="block px-4 py-2 text-sm text-[#f4e4bc] hover:bg-[#d4af37]/20 hover:text-[#d4af37] transition-colors">
+                    Mini Thank You Hamper
+                  </Link>
+                </div>
+              )}
+            </div>
+            
             <Link href="/#occasions" className="text-[#f4e4bc] text-base font-medium hover:text-[#d4af37] transition-colors relative group">
               Occasions
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#d4af37] transition-all group-hover:w-full"></span>
@@ -91,6 +142,52 @@ export default function Header() {
             <Link href="/" className="text-[#f4e4bc] text-base font-medium hover:text-[#d4af37] transition-colors py-2 border-b border-[#d4af37]/20">
               Home
             </Link>
+            
+            {/* Mobile Products Section */}
+            <div className="border-b border-[#d4af37]/20">
+              <button 
+                onClick={() => setProductsDropdownOpen(!productsDropdownOpen)}
+                className="text-[#f4e4bc] text-base font-medium hover:text-[#d4af37] transition-colors py-2 w-full text-left flex items-center justify-between"
+              >
+                Products
+                <ChevronDownIcon className={`w-4 h-4 transition-transform ${productsDropdownOpen ? 'rotate-180' : ''}`} />
+              </button>
+              {productsDropdownOpen && (
+                <div className="pl-4 pb-2 flex flex-col gap-2">
+                  <Link href="/products/classic-diwali-hamper" className="text-[#f4e4bc] text-sm hover:text-[#d4af37] transition-colors py-1">
+                    Classic Diwali Hamper
+                  </Link>
+                  <Link href="/products/luxury-diwali-hamper" className="text-[#f4e4bc] text-sm hover:text-[#d4af37] transition-colors py-1">
+                    Luxury Diwali Hamper
+                  </Link>
+                  <Link href="/products/corporate-diwali-box" className="text-[#f4e4bc] text-sm hover:text-[#d4af37] transition-colors py-1">
+                    Corporate Diwali Box
+                  </Link>
+                  <Link href="/products/christmas-cheer-hamper" className="text-[#f4e4bc] text-sm hover:text-[#d4af37] transition-colors py-1">
+                    Christmas Cheer Hamper
+                  </Link>
+                  <Link href="/products/new-year-celebration-hamper" className="text-[#f4e4bc] text-sm hover:text-[#d4af37] transition-colors py-1">
+                    New Year Celebration
+                  </Link>
+                  <Link href="/products/assorted-sweets-savories-hamper" className="text-[#f4e4bc] text-sm hover:text-[#d4af37] transition-colors py-1">
+                    Sweets & Savories
+                  </Link>
+                  <Link href="/products/healthy-organic-hamper" className="text-[#f4e4bc] text-sm hover:text-[#d4af37] transition-colors py-1">
+                    Healthy & Organic
+                  </Link>
+                  <Link href="/products/tea-coffee-connoisseur-hamper" className="text-[#f4e4bc] text-sm hover:text-[#d4af37] transition-colors py-1">
+                    Tea & Coffee Connoisseur
+                  </Link>
+                  <Link href="/products/custom-corporate-hamper" className="text-[#f4e4bc] text-sm hover:text-[#d4af37] transition-colors py-1">
+                    Custom Corporate
+                  </Link>
+                  <Link href="/products/mini-thank-you-hamper" className="text-[#f4e4bc] text-sm hover:text-[#d4af37] transition-colors py-1">
+                    Mini Thank You
+                  </Link>
+                </div>
+              )}
+            </div>
+            
             <Link href="/#occasions" className="text-[#f4e4bc] text-base font-medium hover:text-[#d4af37] transition-colors py-2 border-b border-[#d4af37]/20">
               Occasions
             </Link>

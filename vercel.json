@@ -53,5 +53,18 @@
       "source": "/sitemap.xml",
       "destination": "/api/sitemap"
     }
+  ],
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "curatogift.com"
+        }
+      ],
+      "destination": "https://www.curatogift.com/:path*",
+      "permanent": true
+    }
   ]
 }
