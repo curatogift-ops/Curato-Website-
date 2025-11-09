@@ -53,8 +53,8 @@ export default function TestimonialsSection() {
   };
 
   return (
-    <section className="py-12 md:py-14 bg-white">
-      <div className="max-w-[1200px] mx-auto px-5">
+    <section className="py-12 md:py-14 bg-white" suppressHydrationWarning>
+      <div className="max-w-[1200px] mx-auto px-5" suppressHydrationWarning>
         <h2 className="text-2xl md:text-3xl font-bold text-[#3B2E2A] text-center mb-6 uppercase tracking-wider">
           What our customers say
         </h2>

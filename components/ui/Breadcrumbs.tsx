@@ -23,6 +23,7 @@ const LINKABLE_ROUTES = new Set<string>([
   "/christmas-hampers",
   "/for-him-her",
   "/get-well-soon",
+  "/products",
   "/dropdown-example",
 ]);
 
@@ -67,16 +68,17 @@ export default function Breadcrumbs() {
   };
 
   return (
-    <nav aria-label="Breadcrumb" className="bg-[#3D2817]/90">
-      <div className="max-w-[1400px] mx-auto px-5 py-2">
+    <nav aria-label="Breadcrumb" className="bg-[#3D2817]/90" suppressHydrationWarning>
+      <div className="max-w-[1400px] mx-auto px-5 py-2" suppressHydrationWarning>
         <ol className="flex flex-wrap items-center gap-1 text-sm">
           {items.map((item, i) => {
             const isLast = i === items.length - 1;
-            const canLink = LINKABLE_ROUTES.has(item.href) && !isLast;
+            // Make all non-last items clickable if they're in LINKABLE_ROUTES
+            const canLink = !isLast && LINKABLE_ROUTES.has(item.href);
             return (
               <li key={item.href} className="flex items-center">
                 {canLink ? (
-                  <Link href={item.href} className="text-[#f4e4bc] hover:text-[#d4af37] font-medium">
+                  <Link href={item.href} className="text-[#f4e4bc] hover:text-[#d4af37] font-medium transition-colors cursor-pointer">
                     {item.label}
                   </Link>
                 ) : (

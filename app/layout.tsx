@@ -40,11 +40,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body className="antialiased" suppressHydrationWarning>
         <Header />
         <Breadcrumbs />
-        <main>{children}</main>
+        <main suppressHydrationWarning>{children}</main>
         <Footer />
       </body>
     </html>

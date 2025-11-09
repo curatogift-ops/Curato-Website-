@@ -33,7 +33,7 @@ export default function HeroSection() {
           {/* Buttons */}
           <div className="flex flex-col sm:flex-row gap-3 justify-center items-center">
             <a 
-              href="/occasions" 
+              href="/" 
               className="px-6 py-3 bg-[#d4af37] text-[#2d2817] rounded-full text-base font-medium hover:bg-[#c4a037] transition-all duration-300 shadow-lg hover:shadow-xl"
             >
               Shop for Festivals & Occaions
