@@ -1,15 +1,16 @@
 'use client';
 
+import Link from 'next/link';
 import { ArrowRightIcon } from '@heroicons/react/24/outline';
 
 const giftCategories = [
-  { name: 'For Him & Her', image: '/images/categories/gift-1.png' },
-  { name: 'Tea & Coffee', image: '/images/categories/gift-2.png' },
-  { name: 'Wine Hampers', image: '/images/categories/gift-3.png' },
-  { name: 'Chocolate Hampers', image: '/images/categories/gift-4.png' },
-  { name: 'Halal Hampers', image: '/images/categories/gift-1.png' },
-  { name: 'Bath & Beauty', image: '/images/categories/gift-2.png' },
-  { name: 'Fruit Hampers', image: '/images/categories/gift-3.png' },
+  { name: 'For Him & Her', image: '/images/categories/gift-1.png', href: '/for-him-her' },
+  { name: 'Tea & Coffee', image: '/images/categories/gift-2.png', href: '/products/tea-coffee-connoisseur-hamper' },
+  { name: 'Wine Hampers', image: '/images/categories/gift-3.png', href: '/products' },
+  { name: 'Chocolate Hampers', image: '/images/categories/gift-4.png', href: '/products' },
+  { name: 'Halal Hampers', image: '/images/categories/gift-1.png', href: '/products' },
+  { name: 'Bath & Beauty', image: '/images/categories/gift-2.png', href: '/products' },
+  { name: 'Fruit Hampers', image: '/images/categories/gift-3.png', href: '/products' },
 ];
 
 export default function GiftsSection() {
@@ -23,9 +24,11 @@ export default function GiftsSection() {
         {/* Responsive grid: smaller cards and denser layout on mobile */}
         <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-3 sm:gap-4">
           {giftCategories.map((category, index) => (
-            <div
+            <Link
               key={index}
+              href={category.href}
               className="relative rounded-xl overflow-hidden cursor-pointer transition-all duration-300 hover:-translate-y-1 hover:shadow-lg bg-white shadow-sm ring-1 ring-black/5 group focus:outline-none focus:ring-2 focus:ring-[#d4af37]"
+              aria-label={`View ${category.name} products`}
             >
               {/* Smaller, responsive height */}
               <div className="relative w-full h-[180px] sm:h-[200px] md:h-[220px] lg:h-[240px] xl:h-[260px] overflow-hidden">
@@ -41,7 +44,7 @@ export default function GiftsSection() {
                 <span className="text-white text-sm sm:text-base font-medium">{category.name}</span>
                 <ArrowRightIcon className="w-4 h-4 sm:w-5 sm:h-5 text-white transition-transform group-hover:translate-x-1" />
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </div>

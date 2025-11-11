@@ -58,10 +58,10 @@ export default function Header() {
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2">
             <Image
-              src="/images/ChatGPT Image Nov 9, 2025, 06_23_16 PM.png"
+              src="/images/1 more bg remove new.png"
               alt="Curato — The Art of Gifting"
-              width={192}
-              height={128}
+              width={200}
+              height={100}
               priority
               className="h-24 md:h-32 w-auto object-contain"
             />

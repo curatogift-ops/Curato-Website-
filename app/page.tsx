@@ -31,8 +31,8 @@ export default function Home() {
     '@type': 'Organization',
     name: 'Curato Gift',
     description: 'Luxury gift hampers and premium gift baskets for all occasions',
-    url: 'https://curatogift.com',
-    logo: 'https://curatogift.com/logo.png',
+    url: 'https://www.curatogift.com',
+    logo: 'https://www.curatogift.com/logo.png',
     contactPoint: {
       '@type': 'ContactPoint',
       telephone: '+91-XXXXXXXXXX',

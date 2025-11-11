@@ -1,13 +1,14 @@
 'use client';
 
+import Link from 'next/link';
 import { useState, useRef, useEffect } from 'react';
 import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/24/outline';
 
 const christmasHampers = [
-  { name: 'Evergreen Magic', image: '/images/christmas/christmas-hamper.png' },
-  { name: "Santa's Stocking", image: '/images/christmas/christmas-hamper.png' },
-  { name: 'Golden Noel', image: '/images/christmas/christmas-hamper.png' },
-  { name: "Santa's Secret", image: '/images/christmas/christmas-hamper.png' },
+  { name: 'Evergreen Magic', image: '/images/christmas/christmas-hamper.png', href: '/christmas-hampers' },
+  { name: "Santa's Stocking", image: '/images/christmas/christmas-hamper.png', href: '/christmas-hampers' },
+  { name: 'Golden Noel', image: '/images/christmas/christmas-hamper.png', href: '/christmas-hampers' },
+  { name: "Santa's Secret", image: '/images/christmas/christmas-hamper.png', href: '/products/christmas-cheer-hamper' },
 ];
 
 export default function ChristmasSection() {
@@ -132,9 +133,11 @@ export default function ChristmasSection() {
         {/* Desktop Grid View */}
         <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-4 gap-5">
           {christmasHampers.map((hamper, index) => (
-            <div
+            <Link
               key={index}
-              className="cursor-pointer hover:-translate-y-1 transition-transform group"
+              href={hamper.href}
+              className="cursor-pointer hover:-translate-y-1 transition-transform group focus:outline-none focus:ring-2 focus:ring-[#d4af37] rounded-lg"
+              aria-label={`View ${hamper.name}`}
             >
               <div className="relative w-full h-[250px] rounded-lg overflow-hidden bg-black">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -148,7 +151,7 @@ export default function ChristmasSection() {
               <h3 className="text-white text-base font-medium text-center mt-4">
                 {hamper.name}
               </h3>
-            </div>
+            </Link>
           ))}
         </div>
 
@@ -165,9 +168,11 @@ export default function ChristmasSection() {
             style={{ transform: `translateX(-${currentIndex * 100}%)` }}
           >
             {christmasHampers.map((hamper, index) => (
-              <div
+              <Link
                 key={index}
-                className="min-w-full px-2"
+                href={hamper.href}
+                className="min-w-full px-2 focus:outline-none focus:ring-2 focus:ring-[#d4af37] rounded-lg"
+                aria-label={`View ${hamper.name}`}
               >
                 <div className="relative w-full h-[300px] rounded-lg overflow-hidden bg-black">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -181,7 +186,7 @@ export default function ChristmasSection() {
                 <h3 className="text-white text-lg font-medium text-center mt-4">
                   {hamper.name}
                 </h3>
-              </div>
+              </Link>
             ))}
           </div>
           

@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { useState } from 'react';
 import { PhoneIcon, EnvelopeIcon, MapPinIcon } from '@heroicons/react/24/outline';
 
@@ -33,11 +34,13 @@ export default function Footer() {
           <div className="order-1 lg:order-1">
             {/* Logo */}
             <div className="mb-6 md:mb-8">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src="/images/ChatGPT Image Nov 9, 2025, 06_23_16 PM.png"
+              <Image
+                src="/images/1 more bg remove new.png"
                 alt="Curato — The Art of Gifting"
-                className="h-24 md:h-32 w-auto object-contain"
+                width={300}
+                height={150}
+                className="h-32 md:h-48 lg:h-56 w-auto object-contain"
+                priority
               />
             </div>
 
@@ -125,7 +128,7 @@ export default function Footer() {
           </div>
 
           {/* Right Section - Contact & Navigation (Desktop) / Bottom (Mobile) */}
-          <div className="order-2 lg:order-2 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
+          <div className="order-2 lg:order-2 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12">
             {/* Contact Us Column */}
             <div>
               <h3 className="text-lg md:text-xl font-semibold mb-4 md:mb-6 text-[#f4e4bc]">CONTACT US</h3>
@@ -156,7 +159,7 @@ export default function Footer() {
                   <Link href="/about" className="text-sm md:text-base hover:text-[#d4af37] transition-colors block">About</Link>
                 </li>
                 <li>
-                  <Link href="/products" className="text-sm md:text-base hover:text-[#d4af37] transition-colors block">Products</Link>
+                  <Link href="/contact" className="text-sm md:text-base hover:text-[#d4af37] transition-colors block">Contact</Link>
                 </li>
                 <li>
                   <Link href="/corporate-hampers" className="text-sm md:text-base hover:text-[#d4af37] transition-colors block">Corporate Hampers</Link>
@@ -165,7 +168,35 @@ export default function Footer() {
                   <Link href="/christmas-hampers" className="text-sm md:text-base hover:text-[#d4af37] transition-colors block">Christmas Hampers</Link>
                 </li>
                 <li>
-                  <Link href="/contact" className="text-sm md:text-base hover:text-[#d4af37] transition-colors block">Contact</Link>
+                  <Link href="/for-him-her" className="text-sm md:text-base hover:text-[#d4af37] transition-colors block">For Him & Her</Link>
+                </li>
+                <li>
+                  <Link href="/get-well-soon" className="text-sm md:text-base hover:text-[#d4af37] transition-colors block">Get Well Soon</Link>
+                </li>
+              </ul>
+            </div>
+            
+            {/* Products Column */}
+            <div>
+              <h3 className="text-lg md:text-xl font-semibold mb-4 md:mb-6 text-[#f4e4bc]">PRODUCTS</h3>
+              <ul className="space-y-2 md:space-y-3">
+                <li>
+                  <Link href="/products/classic-diwali-hamper" className="text-sm md:text-base hover:text-[#d4af37] transition-colors block">Classic Diwali Hamper</Link>
+                </li>
+                <li>
+                  <Link href="/products/luxury-diwali-hamper" className="text-sm md:text-base hover:text-[#d4af37] transition-colors block">Luxury Diwali Hamper</Link>
+                </li>
+                <li>
+                  <Link href="/products/christmas-cheer-hamper" className="text-sm md:text-base hover:text-[#d4af37] transition-colors block">Christmas Cheer Hamper</Link>
+                </li>
+                <li>
+                  <Link href="/products/tea-coffee-connoisseur-hamper" className="text-sm md:text-base hover:text-[#d4af37] transition-colors block">Tea & Coffee Connoisseur</Link>
+                </li>
+                <li>
+                  <Link href="/products/healthy-organic-hamper" className="text-sm md:text-base hover:text-[#d4af37] transition-colors block">Healthy & Organic</Link>
+                </li>
+                <li>
+                  <Link href="/products/custom-corporate-hamper" className="text-sm md:text-base hover:text-[#d4af37] transition-colors block">Custom Corporate Hamper</Link>
                 </li>
               </ul>
             </div>
