@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { 
   MagnifyingGlassIcon, 
   UserCircleIcon, 
@@ -56,10 +57,12 @@ export default function Header() {
         <div className="flex justify-between items-center">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
+            <Image
               src="/images/ChatGPT Image Nov 9, 2025, 06_23_16 PM.png"
               alt="Curato — The Art of Gifting"
+              width={192}
+              height={128}
+              priority
               className="h-24 md:h-32 w-auto object-contain"
             />
           </Link>

@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import "./globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import Breadcrumbs from "@/components/ui/Breadcrumbs";
+import BrandingOverride from "@/components/BrandingOverride";
 
 export const metadata: Metadata = {
   title: "Curato Gift - Luxury Gift Hampers & Baskets",
@@ -20,6 +22,9 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Curato Gift - Luxury Gift Hampers & Baskets",
     description: "Curated premium hampers filled with the finest selections.",
+  },
+  verification: {
+    google: "FHHei7R2K0RMHiMQo_2quPyFwZjhYwq7GStvwwCwbn4",
   },
   robots: {
     index: true,
@@ -46,6 +51,13 @@ export default function RootLayout({
         <Breadcrumbs />
         <main suppressHydrationWarning>{children}</main>
         <Footer />
+        <BrandingOverride />
+        <script
+          type="text/javascript"
+          src="https://d3mkw6s8thqya7.cloudfront.net/integration-plugin.js"
+          id="aisensy-wa-widget"
+          widget-id="aaa6ik"
+        ></script>
       </body>
     </html>
   );

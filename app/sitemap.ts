@@ -74,7 +74,7 @@ function findPages(dir: string, basePath: string = ''): string[] {
 }
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://curatogift.com';
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.curatogift.com';
   const appDir = join(process.cwd(), 'app');
   
   // Pages to exclude from sitemap (test pages, admin pages, etc.)
