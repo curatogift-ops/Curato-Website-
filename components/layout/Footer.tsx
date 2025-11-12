@@ -26,7 +26,7 @@ export default function Footer() {
   };
 
   return (
-    <footer className="bg-[#2a1d11] text-[#f4e4bc] relative overflow-hidden" suppressHydrationWarning>
+    <footer className="bg-black text-white relative overflow-hidden" suppressHydrationWarning>
       <div className="max-w-[1400px] mx-auto px-5 md:px-8 pt-8 md:pt-12 pb-8 md:pb-12" suppressHydrationWarning>
         {/* Main Footer Content */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12">
@@ -35,11 +35,11 @@ export default function Footer() {
             {/* Logo */}
             <div className="mb-6 md:mb-8">
               <Image
-                src="/images/1 more bg remove new.png"
+                src="/images/Group 3 (4).png"
                 alt="Curato — The Art of Gifting"
-                width={300}
-                height={150}
-                className="h-32 md:h-48 lg:h-56 w-auto object-contain"
+                width={1000}
+                height={400}
+                className="h-48 md:h-64 lg:h-72 w-auto object-contain"
                 priority
               />
             </div>
@@ -54,7 +54,7 @@ export default function Footer() {
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 bg-[#3D2817]/50 border border-[#d4af37]/30 rounded-lg text-[#f4e4bc] placeholder:text-[#f4e4bc]/60 focus:outline-none focus:border-[#d4af37] focus:bg-[#3D2817]/70 transition-all"
+                  className="w-full px-4 py-3 bg-gray-900 border border-gray-700 rounded-lg text-white placeholder:text-gray-400 focus:outline-none focus:border-white transition-all"
                 />
                 <input
                   type="email"
@@ -63,7 +63,7 @@ export default function Footer() {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 bg-[#3D2817]/50 border border-[#d4af37]/30 rounded-lg text-[#f4e4bc] placeholder:text-[#f4e4bc]/60 focus:outline-none focus:border-[#d4af37] focus:bg-[#3D2817]/70 transition-all"
+                  className="w-full px-4 py-3 bg-gray-900 border border-gray-700 rounded-lg text-white placeholder:text-gray-400 focus:outline-none focus:border-white transition-all"
                 />
                 <textarea
                   name="message"
@@ -72,12 +72,12 @@ export default function Footer() {
                   onChange={handleChange}
                   required
                   rows={4}
-                  className="w-full px-4 py-3 bg-[#3D2817]/50 border border-[#d4af37]/30 rounded-lg text-[#f4e4bc] placeholder:text-[#f4e4bc]/60 focus:outline-none focus:border-[#d4af37] focus:bg-[#3D2817]/70 transition-all resize-none"
+                  className="w-full px-4 py-3 bg-gray-900 border border-gray-700 rounded-lg text-white placeholder:text-gray-400 focus:outline-none focus:border-white transition-all resize-none"
                 />
               </div>
               <button
                 type="submit"
-                className="mt-4 w-full bg-[#3D2817] hover:bg-[#4a3525] text-[#f4e4bc] font-semibold py-3 px-6 rounded-lg transition-colors"
+                className="mt-4 w-full bg-white hover:bg-gray-200 text-black font-semibold py-3 px-6 rounded-lg transition-colors"
               >
                 SUBMIT
               </button>
@@ -85,11 +85,11 @@ export default function Footer() {
 
             {/* Follow Us Section */}
             <div>
-              <h3 className="text-lg md:text-xl font-semibold mb-4 text-[#f4e4bc]">FOLLOW US</h3>
+              <h3 className="text-lg md:text-xl font-semibold mb-4 text-white">FOLLOW US</h3>
               <div className="flex gap-4">
                 <Link 
                   href="#" 
-                  className="w-12 h-12 rounded-full bg-[#3D2817]/50 hover:bg-[#3D2817] flex items-center justify-center transition-colors"
+                  className="w-12 h-12 rounded-full bg-gray-800 hover:bg-gray-700 flex items-center justify-center transition-colors"
                   aria-label="Facebook"
                 >
                   <svg className="w-6 h-6 text-[#3b5998]" fill="currentColor" viewBox="0 0 24 24">
@@ -98,7 +98,7 @@ export default function Footer() {
                 </Link>
                 <Link 
                   href="#" 
-                  className="w-12 h-12 rounded-full bg-[#3D2817]/50 hover:bg-[#3D2817] flex items-center justify-center transition-colors"
+                  className="w-12 h-12 rounded-full bg-gray-800 hover:bg-gray-700 flex items-center justify-center transition-colors"
                   aria-label="Instagram"
                 >
                   <svg className="w-6 h-6" fill="url(#instagram-gradient)" viewBox="0 0 24 24">
@@ -116,7 +116,7 @@ export default function Footer() {
                 </Link>
                 <Link 
                   href="#" 
-                  className="w-12 h-12 rounded-full bg-[#3D2817]/50 hover:bg-[#3D2817] flex items-center justify-center transition-colors"
+                  className="w-12 h-12 rounded-full bg-gray-800 hover:bg-gray-700 flex items-center justify-center transition-colors"
                   aria-label="YouTube"
                 >
                   <svg className="w-6 h-6 text-[#ff0000]" fill="currentColor" viewBox="0 0 24 24">
@@ -131,72 +131,72 @@ export default function Footer() {
           <div className="order-2 lg:order-2 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12">
             {/* Contact Us Column */}
             <div>
-              <h3 className="text-lg md:text-xl font-semibold mb-4 md:mb-6 text-[#f4e4bc]">CONTACT US</h3>
+              <h3 className="text-lg md:text-xl font-semibold mb-4 md:mb-6 text-white">CONTACT US</h3>
               <div className="space-y-3 md:space-y-4">
                 <p className="flex items-start gap-3 text-sm md:text-base">
-                  <MapPinIcon className="w-5 h-5 text-[#d4af37] flex-shrink-0 mt-0.5" />
+                  <MapPinIcon className="w-5 h-5 text-white flex-shrink-0 mt-0.5" />
                   <span>No: 123, Curato Gift Store, Main Street, Mumbai, Maharashtra, India</span>
                 </p>
                 <p className="flex items-center gap-3 text-sm md:text-base">
-                  <PhoneIcon className="w-5 h-5 text-[#d4af37] flex-shrink-0" />
-                  <a href="tel:+919876543210" className="hover:text-[#d4af37] transition-colors">+91 98765 43210</a>
+                  <PhoneIcon className="w-5 h-5 text-white flex-shrink-0" />
+                  <a href="tel:+919876543210" className="hover:text-gray-300 transition-colors">+91 98765 43210</a>
                 </p>
                 <p className="flex items-center gap-3 text-sm md:text-base">
-                  <EnvelopeIcon className="w-5 h-5 text-[#d4af37] flex-shrink-0" />
-                  <a href="mailto:info@curatogift.com" className="hover:text-[#d4af37] transition-colors">info@curatogift.com</a>
+                  <EnvelopeIcon className="w-5 h-5 text-white flex-shrink-0" />
+                  <a href="mailto:info@curatogift.com" className="hover:text-gray-300 transition-colors">info@curatogift.com</a>
                 </p>
               </div>
             </div>
 
             {/* Navigate Column */}
             <div>
-              <h3 className="text-lg md:text-xl font-semibold mb-4 md:mb-6 text-[#f4e4bc]">NAVIGATE</h3>
+              <h3 className="text-lg md:text-xl font-semibold mb-4 md:mb-6 text-white">NAVIGATE</h3>
               <ul className="space-y-2 md:space-y-3">
                 <li>
-                  <Link href="/" className="text-sm md:text-base hover:text-[#d4af37] transition-colors block">Home</Link>
+                  <Link href="/" className="text-sm md:text-base hover:text-gray-300 transition-colors block">Home</Link>
                 </li>
                 <li>
-                  <Link href="/about" className="text-sm md:text-base hover:text-[#d4af37] transition-colors block">About</Link>
+                  <Link href="/about" className="text-sm md:text-base hover:text-gray-300 transition-colors block">About</Link>
                 </li>
                 <li>
-                  <Link href="/contact" className="text-sm md:text-base hover:text-[#d4af37] transition-colors block">Contact</Link>
+                  <Link href="/contact" className="text-sm md:text-base hover:text-gray-300 transition-colors block">Contact</Link>
                 </li>
                 <li>
-                  <Link href="/corporate-hampers" className="text-sm md:text-base hover:text-[#d4af37] transition-colors block">Corporate Hampers</Link>
+                  <Link href="/corporate-hampers" className="text-sm md:text-base hover:text-gray-300 transition-colors block">Corporate Hampers</Link>
                 </li>
                 <li>
-                  <Link href="/christmas-hampers" className="text-sm md:text-base hover:text-[#d4af37] transition-colors block">Christmas Hampers</Link>
+                  <Link href="/christmas-hampers" className="text-sm md:text-base hover:text-gray-300 transition-colors block">Christmas Hampers</Link>
                 </li>
                 <li>
-                  <Link href="/for-him-her" className="text-sm md:text-base hover:text-[#d4af37] transition-colors block">For Him & Her</Link>
+                  <Link href="/for-him-her" className="text-sm md:text-base hover:text-gray-300 transition-colors block">For Him & Her</Link>
                 </li>
                 <li>
-                  <Link href="/get-well-soon" className="text-sm md:text-base hover:text-[#d4af37] transition-colors block">Get Well Soon</Link>
+                  <Link href="/get-well-soon" className="text-sm md:text-base hover:text-gray-300 transition-colors block">Get Well Soon</Link>
                 </li>
               </ul>
             </div>
             
             {/* Products Column */}
             <div>
-              <h3 className="text-lg md:text-xl font-semibold mb-4 md:mb-6 text-[#f4e4bc]">PRODUCTS</h3>
+              <h3 className="text-lg md:text-xl font-semibold mb-4 md:mb-6 text-white">PRODUCTS</h3>
               <ul className="space-y-2 md:space-y-3">
                 <li>
-                  <Link href="/products/classic-diwali-hamper" className="text-sm md:text-base hover:text-[#d4af37] transition-colors block">Classic Diwali Hamper</Link>
+                  <Link href="/products/classic-diwali-hamper" className="text-sm md:text-base hover:text-gray-300 transition-colors block">Classic Diwali Hamper</Link>
                 </li>
                 <li>
-                  <Link href="/products/luxury-diwali-hamper" className="text-sm md:text-base hover:text-[#d4af37] transition-colors block">Luxury Diwali Hamper</Link>
+                  <Link href="/products/luxury-diwali-hamper" className="text-sm md:text-base hover:text-gray-300 transition-colors block">Luxury Diwali Hamper</Link>
                 </li>
                 <li>
-                  <Link href="/products/christmas-cheer-hamper" className="text-sm md:text-base hover:text-[#d4af37] transition-colors block">Christmas Cheer Hamper</Link>
+                  <Link href="/products/christmas-cheer-hamper" className="text-sm md:text-base hover:text-gray-300 transition-colors block">Christmas Cheer Hamper</Link>
                 </li>
                 <li>
-                  <Link href="/products/tea-coffee-connoisseur-hamper" className="text-sm md:text-base hover:text-[#d4af37] transition-colors block">Tea & Coffee Connoisseur</Link>
+                  <Link href="/products/tea-coffee-connoisseur-hamper" className="text-sm md:text-base hover:text-gray-300 transition-colors block">Tea & Coffee Connoisseur</Link>
                 </li>
                 <li>
-                  <Link href="/products/healthy-organic-hamper" className="text-sm md:text-base hover:text-[#d4af37] transition-colors block">Healthy & Organic</Link>
+                  <Link href="/products/healthy-organic-hamper" className="text-sm md:text-base hover:text-gray-300 transition-colors block">Healthy & Organic</Link>
                 </li>
                 <li>
-                  <Link href="/products/custom-corporate-hamper" className="text-sm md:text-base hover:text-[#d4af37] transition-colors block">Custom Corporate Hamper</Link>
+                  <Link href="/products/custom-corporate-hamper" className="text-sm md:text-base hover:text-gray-300 transition-colors block">Custom Corporate Hamper</Link>
                 </li>
               </ul>
             </div>
@@ -204,8 +204,8 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="pt-6 md:pt-8 mt-8 md:mt-12 border-t border-[#d4af37]/20">
-          <div className="flex justify-center items-center text-xs md:text-sm text-[#f4e4bc]/80">
+        <div className="pt-6 md:pt-8 mt-8 md:mt-12 border-t border-gray-700">
+          <div className="flex justify-center items-center text-xs md:text-sm text-gray-400">
             <p>&copy; {new Date().getFullYear()} Curato Gift. All Rights Reserved.</p>
           </div>
         </div>
