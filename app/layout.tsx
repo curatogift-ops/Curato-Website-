@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
-import Script from "next/script";
 import "./globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import Breadcrumbs from "@/components/ui/Breadcrumbs";
 import BrandingOverride from "@/components/BrandingOverride";
+import ScrollToTop from "@/components/ui/ScrollToTop";
 
 export const metadata: Metadata = {
   title: "Curato Gift - Luxury Gift Hampers & Baskets",
@@ -46,21 +46,25 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className="antialiased" suppressHydrationWarning>
-        {/* Google Tag Manager (noscript) - Must be immediately after opening body tag */}
-        <noscript>
-          <iframe
-            src="https://www.googletagmanager.com/ns.html?id=GTM-M4L9QDWH"
-            height="0"
-            width="0"
-            style={{ display: 'none', visibility: 'hidden' }}
-          />
-        </noscript>
-        
-        {/* Google Tag Manager - Loads in head via Next.js Script component */}
-        <Script
-          id="google-tag-manager"
-          strategy="afterInteractive"
+      <head>
+        {/* Google Analytics */}
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-LMV7TQ1VZ9"
+        />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-LMV7TQ1VZ9');
+            `,
+          }}
+        />
+
+        {/* Google Tag Manager */}
+        <script
           dangerouslySetInnerHTML={{
             __html: `
               (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -71,29 +75,23 @@ export default function RootLayout({
             `,
           }}
         />
-        
-        {/* Google Analytics (gtag.js) - Loads in head via Next.js Script component */}
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-LMV7TQ1VZ9"
-          strategy="afterInteractive"
-        />
-        <Script
-          id="google-analytics"
-          strategy="afterInteractive"
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', 'G-LMV7TQ1VZ9');
-            `,
-          }}
-        />
-        
+      </head>
+      <body className="antialiased" suppressHydrationWarning>
+        {/* Google Tag Manager (noscript) - Must be immediately after opening body tag */}
+        <noscript>
+          <iframe
+            src="https://www.googletagmanager.com/ns.html?id=GTM-M4L9QDWH"
+            height="0"
+            width="0"
+            style={{ display: 'none', visibility: 'hidden' }}
+          />
+        </noscript>
+
         <Header />
         <Breadcrumbs />
         <main suppressHydrationWarning>{children}</main>
         <Footer />
+        <ScrollToTop />
         <BrandingOverride />
         <script
           type="text/javascript"

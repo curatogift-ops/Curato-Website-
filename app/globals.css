@@ -62,3 +62,6 @@ body {
 .scrollbar-hide::-webkit-scrollbar {
   display: none;  /* Chrome, Safari and Opera */
 }
+
+/* Position WhatsApp widget above scroll-to-top button */
+/* The JavaScript in ScrollToTop component will handle positioning dynamically */
