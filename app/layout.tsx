@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import "./globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import Breadcrumbs from "@/components/ui/Breadcrumbs";
-import BrandingOverride from "@/components/BrandingOverride";
 import ScrollToTop from "@/components/ui/ScrollToTop";
 
 export const metadata: Metadata = {
@@ -46,25 +46,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <head>
-        {/* Google Analytics */}
-        <script
-          async
-          src="https://www.googletagmanager.com/gtag/js?id=G-LMV7TQ1VZ9"
-        />
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', 'G-LMV7TQ1VZ9');
-            `,
-          }}
-        />
-
-        {/* Google Tag Manager */}
-        <script
+      <head />
+      <body className="antialiased" suppressHydrationWarning>
+        {/* Google Tag Manager - Using Script component with beforeInteractive */}
+        <Script
+          id="gtm-script"
+          strategy="beforeInteractive"
           dangerouslySetInnerHTML={{
             __html: `
               (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -75,9 +62,8 @@ export default function RootLayout({
             `,
           }}
         />
-      </head>
-      <body className="antialiased" suppressHydrationWarning>
-        {/* Google Tag Manager (noscript) - Must be immediately after opening body tag */}
+
+        {/* Google Tag Manager (noscript) */}
         <noscript>
           <iframe
             src="https://www.googletagmanager.com/ns.html?id=GTM-M4L9QDWH"
@@ -87,18 +73,29 @@ export default function RootLayout({
           />
         </noscript>
 
+        {/* Google Analytics */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-LMV7TQ1VZ9"
+          strategy="afterInteractive"
+        />
+        <Script
+          id="ga-script"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-LMV7TQ1VZ9');
+            `,
+          }}
+        />
+
         <Header />
         <Breadcrumbs />
         <main suppressHydrationWarning>{children}</main>
         <Footer />
         <ScrollToTop />
-        <BrandingOverride />
-        <script
-          type="text/javascript"
-          src="https://d3mkw6s8thqya7.cloudfront.net/integration-plugin.js"
-          id="aisensy-wa-widget"
-          widget-id="aaa6ik"
-        ></script>
       </body>
     </html>
   );
