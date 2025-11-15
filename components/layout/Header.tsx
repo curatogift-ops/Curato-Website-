@@ -52,7 +52,7 @@ export default function Header() {
   }, [mobileMenuOpen]);
 
   return (
-    <header className="sticky top-0 z-50 bg-black shadow-lg" suppressHydrationWarning>
+    <header className="sticky top-0 z-50 bg-[#2A1D11] shadow-lg" suppressHydrationWarning>
       <div className="max-w-[1400px] mx-auto px-5 py-1 relative" suppressHydrationWarning>
         <div className="flex justify-between items-center">
           {/* Logo */}
@@ -89,63 +89,63 @@ export default function Header() {
               {productsDropdownOpen && (
                 <div className="absolute top-full left-1/2 -translate-x-1/2 pt-2 w-[320px] max-w-[90vw] z-50">
                   <div className="bg-white border-2 border-gray-100 rounded-2xl shadow-2xl py-2 animate-fadeIn max-h-[70vh] overflow-y-auto scrollbar-hide">
-                  <Link href="/products/classic-diwali-hamper" className="flex items-center gap-3 px-4 py-2 text-xs text-gray-700 font-medium hover:bg-black hover:text-white transition-all group">
+                  <Link href="/products/classic-diwali-hamper" className="flex items-center gap-3 px-4 py-2 text-xs text-gray-700 font-medium hover:bg-[#2A1D11] hover:text-white transition-all group">
                     <div className="flex-shrink-0 w-8 h-8 flex items-center justify-center bg-gray-100 rounded-lg group-hover:bg-white transition-colors">
-                      <SparklesIcon className="w-5 h-5 text-gray-600 group-hover:text-black transition-colors" />
+                      <SparklesIcon className="w-5 h-5 text-gray-600 group-hover:text-[#2A1D11] transition-colors" />
                     </div>
                     <span>Classic Diwali Hamper</span>
                   </Link>
-                  <Link href="/products/luxury-diwali-hamper" className="flex items-center gap-3 px-4 py-2 text-xs text-gray-700 font-medium hover:bg-black hover:text-white transition-all group">
+                  <Link href="/products/luxury-diwali-hamper" className="flex items-center gap-3 px-4 py-2 text-xs text-gray-700 font-medium hover:bg-[#2A1D11] hover:text-white transition-all group">
                     <div className="flex-shrink-0 w-8 h-8 flex items-center justify-center bg-gray-100 rounded-lg group-hover:bg-white transition-colors">
-                      <GiftIcon className="w-5 h-5 text-gray-600 group-hover:text-black transition-colors" />
+                      <GiftIcon className="w-5 h-5 text-gray-600 group-hover:text-[#2A1D11] transition-colors" />
                     </div>
                     <span>Luxury Diwali Hamper</span>
                   </Link>
-                  <Link href="/products/corporate-diwali-box" className="flex items-center gap-3 px-4 py-2 text-xs text-gray-700 font-medium hover:bg-black hover:text-white transition-all group">
+                  <Link href="/products/corporate-diwali-box" className="flex items-center gap-3 px-4 py-2 text-xs text-gray-700 font-medium hover:bg-[#2A1D11] hover:text-white transition-all group">
                     <div className="flex-shrink-0 w-8 h-8 flex items-center justify-center bg-gray-100 rounded-lg group-hover:bg-white transition-colors">
-                      <BriefcaseIcon className="w-5 h-5 text-gray-600 group-hover:text-black transition-colors" />
+                      <BriefcaseIcon className="w-5 h-5 text-gray-600 group-hover:text-[#2A1D11] transition-colors" />
                     </div>
                     <span>Corporate Diwali Box</span>
                   </Link>
-                  <Link href="/products/christmas-cheer-hamper" className="flex items-center gap-3 px-4 py-2 text-xs text-gray-700 font-medium hover:bg-black hover:text-white transition-all group">
+                  <Link href="/products/christmas-cheer-hamper" className="flex items-center gap-3 px-4 py-2 text-xs text-gray-700 font-medium hover:bg-[#2A1D11] hover:text-white transition-all group">
                     <div className="flex-shrink-0 w-8 h-8 flex items-center justify-center bg-gray-100 rounded-lg group-hover:bg-white transition-colors">
-                      <CakeIcon className="w-5 h-5 text-gray-600 group-hover:text-black transition-colors" />
+                      <CakeIcon className="w-5 h-5 text-gray-600 group-hover:text-[#2A1D11] transition-colors" />
                     </div>
                     <span>Christmas Cheer Hamper</span>
                   </Link>
-                  <Link href="/products/new-year-celebration-hamper" className="flex items-center gap-3 px-4 py-2 text-xs text-gray-700 font-medium hover:bg-black hover:text-white transition-all group">
+                  <Link href="/products/new-year-celebration-hamper" className="flex items-center gap-3 px-4 py-2 text-xs text-gray-700 font-medium hover:bg-[#2A1D11] hover:text-white transition-all group">
                     <div className="flex-shrink-0 w-8 h-8 flex items-center justify-center bg-gray-100 rounded-lg group-hover:bg-white transition-colors">
-                      <FireIcon className="w-5 h-5 text-gray-600 group-hover:text-black transition-colors" />
+                      <FireIcon className="w-5 h-5 text-gray-600 group-hover:text-[#2A1D11] transition-colors" />
                     </div>
                     <span>New Year Celebration</span>
                   </Link>
-                  <Link href="/products/assorted-sweets-savories-hamper" className="flex items-center gap-3 px-4 py-2 text-xs text-gray-700 font-medium hover:bg-black hover:text-white transition-all group">
+                  <Link href="/products/assorted-sweets-savories-hamper" className="flex items-center gap-3 px-4 py-2 text-xs text-gray-700 font-medium hover:bg-[#2A1D11] hover:text-white transition-all group">
                     <div className="flex-shrink-0 w-8 h-8 flex items-center justify-center bg-gray-100 rounded-lg group-hover:bg-white transition-colors">
-                      <HeartIcon className="w-5 h-5 text-gray-600 group-hover:text-black transition-colors" />
+                      <HeartIcon className="w-5 h-5 text-gray-600 group-hover:text-[#2A1D11] transition-colors" />
                     </div>
                     <span>Sweets & Savories</span>
                   </Link>
-                  <Link href="/products/healthy-organic-hamper" className="flex items-center gap-3 px-4 py-2 text-xs text-gray-700 font-medium hover:bg-black hover:text-white transition-all group">
+                  <Link href="/products/healthy-organic-hamper" className="flex items-center gap-3 px-4 py-2 text-xs text-gray-700 font-medium hover:bg-[#2A1D11] hover:text-white transition-all group">
                     <div className="flex-shrink-0 w-8 h-8 flex items-center justify-center bg-gray-100 rounded-lg group-hover:bg-white transition-colors">
-                      <BeakerIcon className="w-5 h-5 text-gray-600 group-hover:text-black transition-colors" />
+                      <BeakerIcon className="w-5 h-5 text-gray-600 group-hover:text-[#2A1D11] transition-colors" />
                     </div>
                     <span>Healthy & Organic</span>
                   </Link>
-                  <Link href="/products/tea-coffee-connoisseur-hamper" className="flex items-center gap-3 px-4 py-2 text-xs text-gray-700 font-medium hover:bg-black hover:text-white transition-all group">
+                  <Link href="/products/tea-coffee-connoisseur-hamper" className="flex items-center gap-3 px-4 py-2 text-xs text-gray-700 font-medium hover:bg-[#2A1D11] hover:text-white transition-all group">
                     <div className="flex-shrink-0 w-8 h-8 flex items-center justify-center bg-gray-100 rounded-lg group-hover:bg-white transition-colors">
-                      <CubeIcon className="w-5 h-5 text-gray-600 group-hover:text-black transition-colors" />
+                      <CubeIcon className="w-5 h-5 text-gray-600 group-hover:text-[#2A1D11] transition-colors" />
                     </div>
                     <span>Tea & Coffee Connoisseur</span>
                   </Link>
-                  <Link href="/products/custom-corporate-hamper" className="flex items-center gap-3 px-4 py-2 text-xs text-gray-700 font-medium hover:bg-black hover:text-white transition-all group">
+                  <Link href="/products/custom-corporate-hamper" className="flex items-center gap-3 px-4 py-2 text-xs text-gray-700 font-medium hover:bg-[#2A1D11] hover:text-white transition-all group">
                     <div className="flex-shrink-0 w-8 h-8 flex items-center justify-center bg-gray-100 rounded-lg group-hover:bg-white transition-colors">
-                      <BuildingOfficeIcon className="w-5 h-5 text-gray-600 group-hover:text-black transition-colors" />
+                      <BuildingOfficeIcon className="w-5 h-5 text-gray-600 group-hover:text-[#2A1D11] transition-colors" />
                     </div>
                     <span>Custom Corporate Hamper</span>
                   </Link>
-                  <Link href="/products/mini-thank-you-hamper" className="flex items-center gap-3 px-4 py-2 text-xs text-gray-700 font-medium hover:bg-black hover:text-white transition-all group">
+                  <Link href="/products/mini-thank-you-hamper" className="flex items-center gap-3 px-4 py-2 text-xs text-gray-700 font-medium hover:bg-[#2A1D11] hover:text-white transition-all group">
                     <div className="flex-shrink-0 w-8 h-8 flex items-center justify-center bg-gray-100 rounded-lg group-hover:bg-white transition-colors">
-                      <HandThumbUpIcon className="w-5 h-5 text-gray-600 group-hover:text-black transition-colors" />
+                      <HandThumbUpIcon className="w-5 h-5 text-gray-600 group-hover:text-[#2A1D11] transition-colors" />
                     </div>
                     <span>Mini Thank You Hamper</span>
                   </Link>

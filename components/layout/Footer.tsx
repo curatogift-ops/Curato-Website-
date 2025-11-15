@@ -26,7 +26,7 @@ export default function Footer() {
   };
 
   return (
-    <footer className="bg-black text-white relative overflow-hidden" suppressHydrationWarning>
+    <footer className="bg-[#2A1D11] text-white relative overflow-hidden" suppressHydrationWarning>
       <div className="max-w-[1400px] mx-auto px-5 md:px-8 pt-8 md:pt-12 pb-8 md:pb-12" suppressHydrationWarning>
         {/* Main Footer Content */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12">

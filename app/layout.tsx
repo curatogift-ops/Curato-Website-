@@ -47,12 +47,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <head />
-      <body className="antialiased" suppressHydrationWarning>
-        {/* Google Tag Manager - Using Script component with beforeInteractive */}
+      <head>
+        {/* Google Tag Manager */}
         <Script
-          id="gtm-script"
-          strategy="beforeInteractive"
+          id="gtm-head"
+          strategy="afterInteractive"
           dangerouslySetInnerHTML={{
             __html: `
               (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -63,8 +62,9 @@ export default function RootLayout({
             `,
           }}
         />
-
-        {/* Google Tag Manager (noscript) */}
+      </head>
+      <body className="antialiased" suppressHydrationWarning>
+        {/* Google Tag Manager (noscript) - Must be immediately after opening body tag */}
         <noscript>
           <iframe
             src="https://www.googletagmanager.com/ns.html?id=GTM-M4L9QDWH"
