@@ -194,18 +194,33 @@ export default function Header() {
 
           {/* Icons */}
           <div className="hidden md:flex gap-4 items-center" suppressHydrationWarning>
-            <button className="text-white hover:text-gray-300 transition-colors" aria-label="Search">
+            <button 
+              type="button"
+              onClick={(e) => e.preventDefault()}
+              className="text-white hover:text-gray-300 transition-colors cursor-default" 
+              aria-label="Search"
+            >
               <MagnifyingGlassIcon className="w-6 h-6" />
             </button>
-            <Link href="/account" className="text-white hover:text-gray-300 transition-colors" aria-label="Account">
+            <button 
+              type="button"
+              onClick={(e) => e.preventDefault()}
+              className="text-white hover:text-gray-300 transition-colors cursor-default" 
+              aria-label="Account"
+            >
               <UserCircleIcon className="w-7 h-7" />
-            </Link>
-            <Link href="/cart" className="text-white hover:text-gray-300 transition-colors relative" aria-label="Shopping cart">
+            </button>
+            <button 
+              type="button"
+              onClick={(e) => e.preventDefault()}
+              className="text-white hover:text-gray-300 transition-colors relative cursor-default" 
+              aria-label="Shopping cart"
+            >
               <ShoppingCartIcon className="w-7 h-7" />
               <span className="absolute -top-2 -right-2 bg-white text-black rounded-full w-5 h-5 flex items-center justify-center text-xs font-semibold">
                 0
               </span>
-            </Link>
+            </button>
           </div>
         </div>
 
