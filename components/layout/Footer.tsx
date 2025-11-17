@@ -4,6 +4,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { useState } from 'react';
 import { PhoneIcon, EnvelopeIcon, MapPinIcon } from '@heroicons/react/24/outline';
+import Container from '@/components/ui/Container';
 
 export default function Footer() {
   const [formData, setFormData] = useState({
@@ -26,27 +27,29 @@ export default function Footer() {
   };
 
   return (
-    <footer className="bg-[#2A1D11] text-white relative overflow-hidden" suppressHydrationWarning>
-      <div className="max-w-[1400px] mx-auto px-5 md:px-8 pt-8 md:pt-12 pb-8 md:pb-12" suppressHydrationWarning>
+    <footer className="bg-[#2A1D11] text-white relative overflow-hidden">
+      <Container className="pt-8 md:pt-12 pb-8 md:pb-12 md:px-8">
         {/* Main Footer Content */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12" suppressHydrationWarning>
           {/* Left Section - Contact Form & Social Media (Desktop) / Top (Mobile) */}
-          <div className="order-1 lg:order-1">
+          <div className="order-1 lg:order-1" suppressHydrationWarning>
             {/* Logo */}
-            <div className="mb-6 md:mb-8">
-              <Image
-                src="/images/Group 3 (4).png"
-                alt="Curato — The Art of Gifting"
-                width={1000}
-                height={400}
-                className="h-48 md:h-64 lg:h-72 w-auto object-contain"
-                priority
-              />
+            <div className="mb-6 md:mb-8" suppressHydrationWarning>
+              <Link href="/" className="inline-block" suppressHydrationWarning>
+                <Image
+                  src="/images/new image logo curato.png"
+                  alt="Curato — The Art of Gifting"
+                  width={1000}
+                  height={400}
+                  className="h-48 md:h-64 lg:h-72 w-auto object-contain"
+                  priority
+                />
+              </Link>
             </div>
 
             {/* Contact Form */}
-            <form onSubmit={handleSubmit} className="mb-6 md:mb-8">
-              <div className="space-y-4">
+            <form onSubmit={handleSubmit} className="mb-6 md:mb-8" suppressHydrationWarning>
+              <div className="space-y-4" suppressHydrationWarning>
                 <input
                   type="text"
                   name="name"
@@ -84,9 +87,9 @@ export default function Footer() {
             </form>
 
             {/* Follow Us Section */}
-            <div>
+            <div suppressHydrationWarning>
               <h3 className="text-lg md:text-xl font-semibold mb-4 text-white">FOLLOW US</h3>
-              <div className="flex gap-4">
+              <div className="flex gap-4" suppressHydrationWarning>
                 <Link 
                   href="#" 
                   className="w-12 h-12 rounded-full bg-gray-800 hover:bg-gray-700 flex items-center justify-center transition-colors"
@@ -128,11 +131,11 @@ export default function Footer() {
           </div>
 
           {/* Right Section - Contact & Navigation (Desktop) / Bottom (Mobile) */}
-          <div className="order-2 lg:order-2 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12">
+          <div className="order-2 lg:order-2 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12" suppressHydrationWarning>
             {/* Contact Us Column */}
-            <div>
+            <div suppressHydrationWarning>
               <h3 className="text-lg md:text-xl font-semibold mb-4 md:mb-6 text-white">CONTACT US</h3>
-              <div className="space-y-3 md:space-y-4">
+              <div className="space-y-3 md:space-y-4" suppressHydrationWarning>
                 <p className="flex items-start gap-3 text-sm md:text-base">
                   <MapPinIcon className="w-5 h-5 text-white flex-shrink-0 mt-0.5" />
                   <span>No: 123, Curato Gift Store, Main Street, Mumbai, Maharashtra, India</span>
@@ -149,9 +152,9 @@ export default function Footer() {
             </div>
 
             {/* Navigate Column */}
-            <div>
+            <div suppressHydrationWarning>
               <h3 className="text-lg md:text-xl font-semibold mb-4 md:mb-6 text-white">NAVIGATE</h3>
-              <ul className="space-y-2 md:space-y-3">
+              <ul className="space-y-2 md:space-y-3" suppressHydrationWarning>
                 <li>
                   <Link href="/" className="text-sm md:text-base hover:text-gray-300 transition-colors block">Home</Link>
                 </li>
@@ -177,9 +180,9 @@ export default function Footer() {
             </div>
             
             {/* Products Column */}
-            <div>
+            <div suppressHydrationWarning>
               <h3 className="text-lg md:text-xl font-semibold mb-4 md:mb-6 text-white">PRODUCTS</h3>
-              <ul className="space-y-2 md:space-y-3">
+              <ul className="space-y-2 md:space-y-3" suppressHydrationWarning>
                 <li>
                   <Link href="/products/classic-diwali-hamper" className="text-sm md:text-base hover:text-gray-300 transition-colors block">Classic Diwali Hamper</Link>
                 </li>
@@ -204,12 +207,12 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="pt-6 md:pt-8 mt-8 md:mt-12 border-t border-gray-700">
-          <div className="flex justify-center items-center text-xs md:text-sm text-gray-400">
-            <p>&copy; {new Date().getFullYear()} Curato Gift. All Rights Reserved.</p>
+        <div className="pt-6 md:pt-8 mt-8 md:mt-12 border-t border-gray-700" suppressHydrationWarning>
+          <div className="flex justify-center items-center text-xs md:text-sm text-gray-400" suppressHydrationWarning>
+            <p suppressHydrationWarning>&copy; {new Date().getFullYear()} Curato Gift. All Rights Reserved.</p>
           </div>
         </div>
-      </div>
+      </Container>
     </footer>
   );
 }

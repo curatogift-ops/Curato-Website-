@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { useState, useRef, useEffect } from 'react';
 import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/24/outline';
+import Container from '@/components/ui/Container';
 
 const christmasHampers = [
   { name: 'Evergreen Magic', image: '/images/christmas/christmas-hamper.png', href: '/christmas-hampers' },
@@ -105,12 +106,12 @@ export default function ChristmasSection() {
 
   return (
     <section ref={sectionRef} className="py-20 bg-black">
-      <div className="max-w-[1400px] mx-auto px-5">
-        <div className="flex justify-between items-center mb-10">
+      <Container>
+        <div className="flex justify-between items-center mb-10" suppressHydrationWarning>
           <h2 className="text-3xl md:text-4xl font-semibold text-white">
             Christmas Hampers
           </h2>
-          <div className="flex gap-2.5">
+          <div className="flex gap-2.5" suppressHydrationWarning>
             <button
               onClick={handlePrev}
               className="w-10 h-10 rounded-full bg-[#333] text-white flex items-center justify-center hover:bg-[#d4af37] hover:text-[#3d2817] transition-all disabled:opacity-50 disabled:cursor-not-allowed"
@@ -131,7 +132,7 @@ export default function ChristmasSection() {
         </div>
 
         {/* Desktop Grid View */}
-        <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-4 gap-5">
+        <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-4 gap-5" suppressHydrationWarning>
           {christmasHampers.map((hamper, index) => (
             <Link
               key={index}
@@ -139,14 +140,15 @@ export default function ChristmasSection() {
               className="cursor-pointer hover:-translate-y-1 transition-transform group focus:outline-none focus:ring-2 focus:ring-[#d4af37] rounded-lg"
               aria-label={`View ${hamper.name}`}
             >
-              <div className="relative w-full h-[250px] rounded-lg overflow-hidden bg-black">
+              <div className="relative w-full h-[250px] rounded-lg overflow-hidden bg-black" suppressHydrationWarning>
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src={hamper.image}
                   alt={hamper.name}
                   className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                  suppressHydrationWarning
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" suppressHydrationWarning></div>
               </div>
               <h3 className="text-white text-base font-medium text-center mt-4">
                 {hamper.name}
@@ -162,10 +164,12 @@ export default function ChristmasSection() {
           onTouchStart={handleTouchStart}
           onTouchMove={handleTouchMove}
           onTouchEnd={handleTouchEnd}
+          suppressHydrationWarning
         >
           <div 
             className="flex transition-transform duration-300 ease-out"
             style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+            suppressHydrationWarning
           >
             {christmasHampers.map((hamper, index) => (
               <Link
@@ -174,14 +178,15 @@ export default function ChristmasSection() {
                 className="min-w-full px-2 focus:outline-none focus:ring-2 focus:ring-[#d4af37] rounded-lg"
                 aria-label={`View ${hamper.name}`}
               >
-                <div className="relative w-full h-[300px] rounded-lg overflow-hidden bg-black">
+                <div className="relative w-full h-[300px] rounded-lg overflow-hidden bg-black" suppressHydrationWarning>
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
                     src={hamper.image}
                     alt={hamper.name}
                     className="w-full h-full object-cover"
+                    suppressHydrationWarning
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" suppressHydrationWarning></div>
                 </div>
                 <h3 className="text-white text-lg font-medium text-center mt-4">
                   {hamper.name}
@@ -191,7 +196,7 @@ export default function ChristmasSection() {
           </div>
           
           {/* Carousel Dots */}
-          <div className="flex justify-center gap-2 mt-6">
+          <div className="flex justify-center gap-2 mt-6" suppressHydrationWarning>
             {christmasHampers.map((_, index) => (
               <button
                 key={index}
@@ -210,7 +215,7 @@ export default function ChristmasSection() {
             ))}
           </div>
         </div>
-      </div>
+      </Container>
     </section>
   );
 }

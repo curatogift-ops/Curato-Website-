@@ -6,6 +6,7 @@ import Footer from "@/components/layout/Footer";
 import Breadcrumbs from "@/components/ui/Breadcrumbs";
 import ScrollToTop from "@/components/ui/ScrollToTop";
 import WhatsAppButton from "@/components/ui/WhatsAppButton";
+import HydrationFix from "@/components/HydrationFix";
 
 export const metadata: Metadata = {
   title: "Curato Gift - Luxury Gift Hampers & Baskets",
@@ -48,6 +49,92 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
+        {/* Prevent iOS auto-detection of phone numbers, emails, etc. which can cause hydration issues */}
+        <meta
+          name="format-detection"
+          content="telephone=no, date=no, email=no, address=no"
+        />
+        {/* Remove browser extension attributes before React hydrates */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                // Remove extension attributes immediately to prevent hydration mismatches
+                function removeExtensionAttributes() {
+                  if (typeof document === 'undefined') return;
+                  var allElements = document.querySelectorAll('*');
+                  for (var i = 0; i < allElements.length; i++) {
+                    var el = allElements[i];
+                    el.removeAttribute('bis_skin_checked');
+                    el.removeAttribute('bis_size');
+                    el.removeAttribute('bis_id');
+                  }
+                }
+                
+                // Run immediately if DOM is ready, otherwise wait
+                if (document.readyState === 'loading') {
+                  document.addEventListener('DOMContentLoaded', removeExtensionAttributes);
+                } else {
+                  removeExtensionAttributes();
+                }
+                
+                // Use MutationObserver to catch attributes added after initial cleanup
+                if (typeof MutationObserver !== 'undefined') {
+                  var observer = new MutationObserver(function(mutations) {
+                    mutations.forEach(function(mutation) {
+                      if (mutation.type === 'attributes') {
+                        var target = mutation.target;
+                        if (target.removeAttribute) {
+                          target.removeAttribute('bis_skin_checked');
+                          target.removeAttribute('bis_size');
+                          target.removeAttribute('bis_id');
+                        }
+                      } else if (mutation.type === 'childList') {
+                        // New nodes added, clean them
+                        mutation.addedNodes.forEach(function(node) {
+                          if (node.nodeType === 1) { // Element node
+                            if (node.removeAttribute) {
+                              node.removeAttribute('bis_skin_checked');
+                              node.removeAttribute('bis_size');
+                              node.removeAttribute('bis_id');
+                            }
+                            // Also clean children
+                            var children = node.querySelectorAll ? node.querySelectorAll('*') : [];
+                            for (var j = 0; j < children.length; j++) {
+                              children[j].removeAttribute('bis_skin_checked');
+                              children[j].removeAttribute('bis_size');
+                              children[j].removeAttribute('bis_id');
+                            }
+                          }
+                        });
+                      }
+                    });
+                  });
+                  
+                  // Start observing when DOM is ready
+                  var startObserving = function() {
+                    observer.observe(document.documentElement, {
+                      attributes: true,
+                      attributeFilter: ['bis_skin_checked', 'bis_size', 'bis_id'],
+                      childList: true,
+                      subtree: true
+                    });
+                  };
+                  
+                  if (document.readyState === 'loading') {
+                    document.addEventListener('DOMContentLoaded', startObserving);
+                  } else {
+                    startObserving();
+                  }
+                }
+                
+                // Also run after a short delay to catch late additions
+                setTimeout(removeExtensionAttributes, 0);
+                setTimeout(removeExtensionAttributes, 50);
+              })();
+            `,
+          }}
+        />
         {/* Google Tag Manager */}
         <script
           dangerouslySetInnerHTML={{
@@ -90,6 +177,7 @@ export default function RootLayout({
           }}
         />
 
+        <HydrationFix />
         <Header />
         <Breadcrumbs />
         <main suppressHydrationWarning>{children}</main>

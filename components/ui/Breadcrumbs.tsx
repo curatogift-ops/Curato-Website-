@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useMemo } from "react";
+import Container from "@/components/ui/Container";
 
 const LABEL_OVERRIDES: Record<string, string> = {
   "": "Home",
@@ -69,27 +70,27 @@ export default function Breadcrumbs() {
 
   return (
     <nav aria-label="Breadcrumb" className="bg-[#3D2817]/90" suppressHydrationWarning>
-      <div className="max-w-[1400px] mx-auto px-5 py-2" suppressHydrationWarning>
-        <ol className="flex flex-wrap items-center gap-1 text-sm">
+      <Container className="py-2">
+        <ol className="flex flex-wrap items-center gap-1 text-sm" suppressHydrationWarning>
           {items.map((item, i) => {
             const isLast = i === items.length - 1;
             // Make all non-last items clickable if they're in LINKABLE_ROUTES
             const canLink = !isLast && LINKABLE_ROUTES.has(item.href);
             return (
-              <li key={item.href} className="flex items-center">
+              <li key={item.href} className="flex items-center" suppressHydrationWarning>
                 {canLink ? (
-                  <Link href={item.href} className="text-[#f4e4bc] hover:text-[#d4af37] font-medium transition-colors cursor-pointer">
+                  <Link href={item.href} className="text-[#f4e4bc] hover:text-[#d4af37] font-medium transition-colors cursor-pointer" suppressHydrationWarning>
                     {item.label}
                   </Link>
                 ) : (
-                  <span className={isLast ? "text-white font-semibold" : "text-[#f4e4bc]/80"}>{item.label}</span>
+                  <span className={isLast ? "text-white font-semibold" : "text-[#f4e4bc]/80"} suppressHydrationWarning>{item.label}</span>
                 )}
-                {!isLast && <span className="mx-2 text-[#d4af37]">/</span>}
+                {!isLast && <span className="mx-2 text-[#d4af37]" suppressHydrationWarning>/</span>}
               </li>
             );
           })}
         </ol>
-      </div>
+      </Container>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
     </nav>
   );

@@ -65,3 +65,39 @@ body {
 
 /* Position WhatsApp widget above scroll-to-top button */
 /* The JavaScript in ScrollToTop component will handle positioning dynamically */
+
+/* Logo hover effect with golden glow */
+.logo-hover {
+  transition: all 0.3s ease-in-out;
+  display: inline-block;
+  cursor: pointer;
+  position: relative;
+}
+
+.logo-hover:hover {
+  transform: scale(1.1);
+  filter: brightness(1.2) saturate(1.1);
+  box-shadow: 
+    0 0 20px rgba(212, 175, 55, 0.8),
+    0 0 40px rgba(212, 175, 55, 0.5),
+    0 0 60px rgba(212, 175, 55, 0.3);
+}
+
+.logo-hover::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 8px;
+  background: linear-gradient(135deg, rgba(212, 175, 55, 0.2) 0%, rgba(212, 175, 55, 0) 50%);
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.logo-hover:hover::before {
+  opacity: 1;
+}

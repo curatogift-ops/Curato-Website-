@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import Container from '@/components/ui/Container';
 import { 
   MagnifyingGlassIcon, 
   UserCircleIcon, 
@@ -52,18 +53,19 @@ export default function Header() {
   }, [mobileMenuOpen]);
 
   return (
-    <header className="sticky top-0 z-50 bg-[#2A1D11] shadow-lg" suppressHydrationWarning>
-      <div className="max-w-[1400px] mx-auto px-5 py-1 relative" suppressHydrationWarning>
-        <div className="flex justify-between items-center">
+    <header className="sticky top-0 z-50 bg-[#2A1D11] shadow-lg">
+      <Container className="py-1 relative">
+        <div className="flex justify-between items-center" suppressHydrationWarning>
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2">
+          <Link href="/" className="flex items-center gap-2" suppressHydrationWarning>
             <Image
-              src="/images/Group 3 (4).png"
+              src="/images/new image logo curato.png"
               alt="Curato — The Art of Gifting"
               width={1000}
               height={400}
               priority
-              className="h-16 md:h-20 w-auto object-contain"
+              className="h-20 md:h-24 w-auto object-contain"
+              suppressHydrationWarning
             />
           </Link>
 
@@ -79,6 +81,7 @@ export default function Header() {
               className="relative"
               onMouseEnter={() => setProductsDropdownOpen(true)}
               onMouseLeave={() => setProductsDropdownOpen(false)}
+              suppressHydrationWarning
             >
               <button className="text-white text-base font-medium hover:text-gray-300 transition-colors relative group flex items-center gap-1 py-2">
                 Products
@@ -190,7 +193,7 @@ export default function Header() {
           </button>
 
           {/* Icons */}
-          <div className="hidden md:flex gap-4 items-center">
+          <div className="hidden md:flex gap-4 items-center" suppressHydrationWarning>
             <button className="text-white hover:text-gray-300 transition-colors" aria-label="Search">
               <MagnifyingGlassIcon className="w-6 h-6" />
             </button>
@@ -347,7 +350,7 @@ export default function Header() {
             </nav>
           </>
         )}
-      </div>
+      </Container>
     </header>
   );
 }

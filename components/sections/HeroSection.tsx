@@ -1,5 +1,7 @@
 'use client';
 
+import Container from '@/components/ui/Container';
+
 export default function HeroSection() {
   return (
     <section className="relative min-h-[420px] md:min-h-[500px] flex items-center overflow-hidden">
@@ -16,11 +18,11 @@ export default function HeroSection() {
       </video>
 
       {/* Overlay */}
-      <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-[#2d2817]/70 to-[#3d2817]/60 z-10"></div>
+      <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-[#2d2817]/70 to-[#3d2817]/60 z-10" suppressHydrationWarning></div>
 
       {/* Content */}
-      <div className="relative z-20 max-w-[1400px] mx-auto w-full px-5 py-12 sm:py-14">
-        <div className="text-center max-w-5xl mx-auto">
+      <Container className="relative z-20 w-full py-12 sm:py-14">
+        <div className="text-center max-w-5xl mx-auto" suppressHydrationWarning>
           {/* Main Heading */}
           <h1 className="text-[2.1rem] md:text-[2.625rem] lg:text-[3.15rem] font-serif text-[#d4af37] mb-4 leading-snug">
             Thoughtfully Curated, Locally<br />Crafted. Unfrogibabely Given
@@ -32,7 +34,7 @@ export default function HeroSection() {
           </p>
 
           {/* Buttons */}
-          <div className="flex flex-col sm:flex-row gap-3 justify-center items-center">
+          <div className="flex flex-col sm:flex-row gap-3 justify-center items-center" suppressHydrationWarning>
             <a 
               href="/" 
               className="px-6 py-3 bg-[#d4af37] text-[#2d2817] rounded-full text-base font-medium hover:bg-[#c4a037] transition-all duration-300 shadow-lg hover:shadow-xl"
@@ -47,7 +49,7 @@ export default function HeroSection() {
             </a>
           </div>
         </div>
-      </div>
+      </Container>
     </section>
   );
 }
