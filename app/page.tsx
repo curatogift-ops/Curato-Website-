@@ -35,14 +35,14 @@ export default function Home() {
     logo: 'https://www.curatogift.com/logo.png',
     contactPoint: {
       '@type': 'ContactPoint',
-      telephone: '+91-XXXXXXXXXX',
+      telephone: '+91-90196-94097',
       contactType: 'Customer Service',
       email: 'info@curatogift.com',
     },
     sameAs: [
-      'https://www.facebook.com/curatogift',
-      'https://www.instagram.com/curatogift',
-      'https://www.youtube.com/curatogift',
+      'https://www.facebook.com/profile.php?id=61583467860624',
+      'https://www.instagram.com/curatogift/',
+      'https://www.linkedin.com/in/curato-gift-47a280398/',
     ],
   };
 

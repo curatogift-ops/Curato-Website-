@@ -54,9 +54,9 @@ export default function TestimonialsSection() {
   };
 
   return (
-    <section className="py-12 md:py-14 bg-black">
+    <section className="py-12 md:py-14 bg-white">
       <Container maxWidth="narrow">
-        <h2 className="text-2xl md:text-3xl font-bold text-white text-center mb-6 uppercase tracking-wider">
+        <h2 className="text-2xl md:text-3xl font-bold text-black text-center mb-6 uppercase tracking-wider">
           What our customers say
         </h2>
 

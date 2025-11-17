@@ -340,11 +340,11 @@ export default function Header() {
               {/* Call Us Button */}
               <div className="px-5 py-6">
                 <a 
-                  href="tel:+919876543210" 
+                  href="tel:+919019694097" 
                   className="w-full bg-black text-white font-semibold py-3 px-4 rounded flex items-center justify-center gap-2 hover:bg-gray-800 transition-colors"
                 >
                   <PhoneIcon className="w-5 h-5" />
-                  CALL US - +91 98765 43210
+                  CALL US - +91 90196 94097
                 </a>
               </div>
             </nav>

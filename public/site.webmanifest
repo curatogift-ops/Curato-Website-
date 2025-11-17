@@ -1,0 +1,22 @@
+{
+  "name": "Curato Gift - Luxury Gift Hampers & Baskets",
+  "short_name": "Curato Gift",
+  "description": "Curated premium hampers filled with the finest selections",
+  "icons": [
+    {
+      "src": "/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#ffffff",
+  "background_color": "#ffffff",
+  "display": "standalone",
+  "start_url": "/",
+  "scope": "/"
+}
