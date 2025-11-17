@@ -56,6 +56,7 @@ export default function RootLayout({
         />
         {/* Remove browser extension attributes before React hydrates */}
         <script
+          suppressHydrationWarning
           dangerouslySetInnerHTML={{
             __html: `
               (function() {
@@ -68,6 +69,8 @@ export default function RootLayout({
                     el.removeAttribute('bis_skin_checked');
                     el.removeAttribute('bis_size');
                     el.removeAttribute('bis_id');
+                    el.removeAttribute('bis_use');
+                    el.removeAttribute('data-bis-config');
                   }
                 }
                 
@@ -88,6 +91,8 @@ export default function RootLayout({
                           target.removeAttribute('bis_skin_checked');
                           target.removeAttribute('bis_size');
                           target.removeAttribute('bis_id');
+                          target.removeAttribute('bis_use');
+                          target.removeAttribute('data-bis-config');
                         }
                       } else if (mutation.type === 'childList') {
                         // New nodes added, clean them
@@ -97,6 +102,8 @@ export default function RootLayout({
                               node.removeAttribute('bis_skin_checked');
                               node.removeAttribute('bis_size');
                               node.removeAttribute('bis_id');
+                              node.removeAttribute('bis_use');
+                              node.removeAttribute('data-bis-config');
                             }
                             // Also clean children
                             var children = node.querySelectorAll ? node.querySelectorAll('*') : [];
@@ -104,6 +111,8 @@ export default function RootLayout({
                               children[j].removeAttribute('bis_skin_checked');
                               children[j].removeAttribute('bis_size');
                               children[j].removeAttribute('bis_id');
+                              children[j].removeAttribute('bis_use');
+                              children[j].removeAttribute('data-bis-config');
                             }
                           }
                         });
@@ -115,7 +124,7 @@ export default function RootLayout({
                   var startObserving = function() {
                     observer.observe(document.documentElement, {
                       attributes: true,
-                      attributeFilter: ['bis_skin_checked', 'bis_size', 'bis_id'],
+                      attributeFilter: ['bis_skin_checked', 'bis_size', 'bis_id', 'bis_use', 'data-bis-config'],
                       childList: true,
                       subtree: true
                     });
@@ -135,8 +144,12 @@ export default function RootLayout({
             `,
           }}
         />
+      </head>
+      <body className="antialiased" suppressHydrationWarning>
         {/* Google Tag Manager */}
-        <script
+        <Script
+          id="gtm-script"
+          strategy="afterInteractive"
           dangerouslySetInnerHTML={{
             __html: `
               (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -147,8 +160,7 @@ export default function RootLayout({
             `,
           }}
         />
-      </head>
-      <body className="antialiased" suppressHydrationWarning>
+        
         {/* Google Tag Manager (noscript) */}
         <noscript>
           <iframe
