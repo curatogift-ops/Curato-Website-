@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import "./globals.css";
 
 import Header from "@/components/layout/Header";
@@ -156,6 +157,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe>`,
         <Footer />
         <ScrollToTop />
         <WhatsAppButton />
+
+        {/* Hotjar Clone Tracking Script */}
+        <Script src="https://web-production-dd918.up.railway.app/api/heatmaps/tracking-script/1/" />
       </body>
     </html>
   );

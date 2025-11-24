@@ -57,15 +57,26 @@ export default function Header() {
       <Container className="py-1 relative">
         <div className="flex justify-between items-center" suppressHydrationWarning>
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2" suppressHydrationWarning>
+          {/* <Link href="/" className="flex items-center gap-2" suppressHydrationWarning>
             <Image
-              src="/images/new image logo curato.png"
+              src="https://i.ibb.co/CKDgKYRy/curato-logo.png"
               alt="Curato — The Art of Gifting"
               width={1000}
               height={400}
               priority
               className="h-20 md:h-24 w-auto object-contain"
               suppressHydrationWarning
+            />
+          </Link> */}
+
+          <Link href="/" className="flex items-center gap-2" suppressHydrationWarning>
+            <Image
+              src="/images/shabaz@4x%20(1).png"
+              alt="Curato — The Art of Gifting"
+              width={1000}
+              height={400}
+              priority
+              className="h-20 md:h-24 w-auto object-contain"
             />
           </Link>
 
