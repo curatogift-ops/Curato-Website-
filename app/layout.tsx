@@ -158,8 +158,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe>`,
         <ScrollToTop />
         <WhatsAppButton />
 
-        {/* Hotjar Clone Tracking Script */}
-        <Script src="https://web-production-dd918.up.railway.app/api/heatmaps/tracking-script/1/" />
+        {/* Hotjar Clone Tracking Script - Site ID 4 (Curato) */}
+        <Script
+          src="http://localhost:8000/api/heatmaps/tracking-script/4/"
+          strategy="afterInteractive"
+        />
       </body>
     </html>
   );
